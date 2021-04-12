@@ -4,13 +4,13 @@ Código para benchmark de implementações de log.
 
 São utilizadas, fundamentalmente, 2 (duas) bibliotecas:
 
-- **logrus** : github.com/sirupsen/logrus
-- **zerolog** : github.com/rs/zerolog
+- **logrus** : [github.com/sirupsen/logrus](https://github.com/sirupsen/logrus)
+- **zerolog** : [github.com/rs/zerolog](https://github.com/rs/zerolog)
 
 Com essas bibliotecas são contruídas duas implementação de wrapper para generalização das intefaces. Cada uma delas implementa interfaces distintas simulando o padrão utilizado entre as bibliotecas envolvidas:
 
-- github.com/ademirfteo/gologwrp/pkg/logger
-- github.com/Catroque/loggo/pkg/logger
+- **gologwrp** : [github.com/ademirfteo/gologwrp](https://github.com/ademirfteo/gologwrp)
+- **loggo** : [github.com/Catroque/loggo](https://github.com/Catroque/loggo)
 
 A interface *logrus* testa a condição de log ao final de sua cadeia de funções ao passo que a *zerolog* testa a possibildade de execução no início da cadeia. Isso faz com que não seja necessária a formação de dados para um evento de log que não será registrado na aplicação.
 
