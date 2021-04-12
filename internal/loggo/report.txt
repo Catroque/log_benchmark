@@ -1,0 +1,33 @@
+# main/internal/loggo [main/internal/loggo.test]
+./loggo_test.go:10:19: inlining call to logger.New
+./loggo_test.go:19:19: inlining call to logger.New
+./loggo_test.go:31:19: inlining call to logger.New
+./loggo_test.go:40:19: inlining call to logger.New
+./loggo_test.go:8:37: b does not escape
+./loggo_test.go:17:41: b does not escape
+./loggo_test.go:22:48: map[string]interface {} literal escapes to heap
+./loggo_test.go:23:4: "bar1" escapes to heap
+./loggo_test.go:24:4: "bar2" escapes to heap
+./loggo_test.go:29:36: b does not escape
+./loggo_test.go:38:40: b does not escape
+./loggo_test.go:43:47: map[string]interface {} literal escapes to heap
+./loggo_test.go:44:4: "bar1" escapes to heap
+./loggo_test.go:45:4: "bar2" escapes to heap
+./loggo_test.go:54:39: b does not escape
+./loggo_test.go:61:38: b does not escape
+# main/internal/loggo.test
+/tmp/go-build623008988/b001/_testmain.go:44:6: can inline init.0
+/tmp/go-build623008988/b001/_testmain.go:52:24: inlining call to testing.MainStart
+/tmp/go-build623008988/b001/_testmain.go:52:42: testdeps.TestDeps literal escapes to heap
+/tmp/go-build623008988/b001/_testmain.go:52:24: &testing.M literal escapes to heap
+goos: linux
+goarch: amd64
+pkg: main/internal/loggo
+BenchmarkLog_Debug2Info_Simple-4       	22769796	        50.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkLog_Debug2Info_WithFields-4   	 3606787	       323 ns/op	     352 B/op	       3 allocs/op
+BenchmarkLog_Info2Info_Simple-4        	  188149	     10877 ns/op	      16 B/op	       1 allocs/op
+BenchmarkLog_Info2Info_WithFields-4    	  113665	     12213 ns/op	     416 B/op	       5 allocs/op
+BenchmarkLog_Debug2Info_G_Simple-4     	21278766	        49.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkLog_Info2Info_G_Simple-4      	  243457	      8473 ns/op	      16 B/op	       1 allocs/op
+PASS
+ok  	main/internal/loggo	9.656s
